@@ -478,3 +478,48 @@ button.video-play { position: absolute; inset: 50% auto auto 50%; translate: -50
   border-radius: 50%;
 }
 .benefit-glint .benefit-icon { margin: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  :is(.pill, button, .brand-glint):focus-visible::after {
+    animation: contact-glint 4s linear infinite;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    :is(.pill, button, .brand-glint, .benefit-glint):hover::after {
+      animation: contact-glint 4s linear infinite;
+    }
+  }
+}
+.pause-bubbles :is(.pill, button, .brand-glint, .benefit-glint)::after {
+  animation-play-state: paused;
+}
+
+@media (max-width: 700px) {
+  .shipping {
+    display: block;
+    min-height: 0;
+    padding: 0 0 2rem;
+    background: #e8e9ea;
+  }
+  .shipping::before {
+    position: relative;
+    display: block;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: url("assets/entrega.webp") 52% center / cover;
+    clip-path: inset(0);
+    z-index: 0;
+  }
+  .shipping .wrap { width: 88%; margin-top: 1rem; }
+  .shipping .glass { max-width: none; }
+}
+
+.menu-toggle { display: grid; place-items: center; min-width: 44px; }
+@media (hover: none), (pointer: coarse) {
+  .benefit-glint::after { opacity: 1; }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: none),
+       (prefers-reduced-motion: no-preference) and (pointer: coarse) {
+  .benefits .enter-section .benefit-glint::after { animation: contact-glint 4s linear infinite; }
+  .pause-bubbles .benefits .enter-section .benefit-glint::after { animation-play-state: paused; }
+}
