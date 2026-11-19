@@ -80,8 +80,9 @@ if (phoneToggle) {
 
 const videoPlay = document.querySelector(".video-play");
 if (videoPlay && location.protocol !== "file:") {
-  videoPlay.hidden = false;
-  videoPlay.addEventListener("click", () => {
+  videoPlay.addEventListener("click", (event) => {
+    if (matchMedia("(pointer: coarse), (max-width: 700px)").matches || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
     const player = document.createElement("iframe");
     player.title = "Apresentação oficial do iPhone 18 Pro";
     player.src = "https://www.youtube-nocookie.com/embed/5yD7pcI6HmI?autoplay=1&playsinline=1";
