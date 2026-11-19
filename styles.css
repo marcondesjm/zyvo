@@ -523,3 +523,26 @@ button:focus-visible { outline: 3px solid #365d99; outline-offset: 4px; }
   .benefits .enter-section .benefit-glint::after { animation: contact-glint 4s linear infinite; }
   .pause-bubbles .benefits .enter-section .benefit-glint::after { animation-play-state: paused; }
 }
+
+.product-image { position: relative; border-radius: 14px; }
+@media (prefers-reduced-motion: no-preference) and (hover: none),
+       (prefers-reduced-motion: no-preference) and (pointer: coarse) {
+  .product-grid .enter-section .product-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
+    background: conic-gradient(from var(--contact-angle), transparent, #a6752b 12deg, #ffe3a0 30deg, transparent 65deg);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: contact-glint 4s linear infinite;
+  }
+  .pause-bubbles .product-grid .enter-section .product-image::after {
+    animation-play-state: paused;
+  }
+}
+
+.hero-emphasis { color: #303034; font-weight: 600; }
+.high-contrast .hero-emphasis { color: #fff; }

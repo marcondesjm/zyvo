@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="styles.css">
 <script src="site.js" defer></script>
 <script src="motion.js" defer></script>
+<script src="context-menu.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -36,7 +37,7 @@
 <a class="pill primary" href="#produtos">Ver produtos</a>
 </nav>
 <div class="hero-copy" id="conteudo">
-<h1><span class="title-line"><span>A tecnologia Apple mais</span></span> <span class="title-line"><span>desejada do mundo, direto</span></span> <span class="title-line"><span>da Flórida para você.</span></span></h1>
+<h1><span class="title-line"><span>A <strong class="hero-emphasis">tecnologia Apple</strong> mais</span></span> <span class="title-line"><span>desejada do mundo, direto</span></span> <span class="title-line"><span>da Flórida <strong class="hero-emphasis">para você</strong>.</span></span></h1>
 <p>Conectamos a sua rotina às últimas inovações com transparência, segurança internacional e atendimento humanizado.</p>
 <a class="pill" href="#produtos">Conheça os produtos</a>
 </div>
@@ -58,10 +59,10 @@
 </section>
 <section class="products wrap" id="produtos">
 <h2 data-reveal>Melhores produtos</h2><div class="product-grid">
-<article data-reveal><img src="assets/produto-1.webp" alt="" loading="lazy"><h3>iPhone 16 Pro Max <small>(256 GB)</small></h3></article>
-<article data-reveal><img src="assets/produto-2.webp" alt="" loading="lazy"><h3>MacBook Pro 14″ <small>(chip M3)</small></h3></article>
-<article data-reveal><img src="assets/produto-3.webp" alt="" loading="lazy"><h3>iPad Pro 11″ <small>(chip M4, Wi-Fi)</small></h3></article>
-<article data-reveal><img src="assets/produto-4.webp" alt="" loading="lazy"><h3>Apple Watch Ultra 2</h3></article>
+<article data-reveal><div class="product-image"><img src="assets/produto-1.webp" alt="" loading="lazy"></div><h3>iPhone 16 Pro Max <small>(256 GB)</small></h3></article>
+<article data-reveal><div class="product-image"><img src="assets/produto-2.webp" alt="" loading="lazy"></div><h3>MacBook Pro 14″ <small>(chip M3)</small></h3></article>
+<article data-reveal><div class="product-image"><img src="assets/produto-3.webp" alt="" loading="lazy"></div><h3>iPad Pro 11″ <small>(chip M4, Wi-Fi)</small></h3></article>
+<article data-reveal><div class="product-image"><img src="assets/produto-4.webp" alt="" loading="lazy"></div><h3>Apple Watch Ultra 2</h3></article>
 </div>
 
 <details class="phone-detail">
