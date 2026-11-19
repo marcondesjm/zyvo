@@ -9,7 +9,20 @@ if (!motionPreference.matches && "IntersectionObserver" in window) {
     }
   }, { threshold: 0.08 });
 
-  document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));
+  const about = document.querySelector(".about [data-reveal]");
+  document.querySelectorAll("[data-reveal]").forEach((element) => {
+    if (element !== about) observer.observe(element);
+  });
+
+  const aboutTitle = about?.querySelector("h2");
+  if (aboutTitle) {
+    const aboutObserver = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      aboutObserver.disconnect();
+      about.classList.add("enter-section");
+    }, { rootMargin: "0px 0px -18% 0px", threshold: 0.5 });
+    aboutObserver.observe(aboutTitle);
+  }
 }
 
 const delivery = document.querySelector(".shipping");
