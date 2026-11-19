@@ -7,7 +7,7 @@ Site institucional responsivo baseado no layout e na identidade visual da Zyvo W
 ## Conteúdo e identidade visual
 
 - Abertura com fundo de vidro, logo oficial em SVG, apresentação e chamada para o catálogo.
-- Seção Sobre Nós com o texto da referência e vídeo oficial do iPhone 18 Pro. No computador, o play abre o player incorporado em modo de privacidade reforçada. No celular, o botão abre diretamente o vídeo oficial no YouTube.
+- Seção Sobre Nós com o texto da referência e vídeo oficial do iPhone 18 Pro. O player incorporado abre quando a área do vídeo entra na tela e solicita reprodução sem som. Com movimento reduzido, ele abre ao clicar em play. Há um link direto para o YouTube.
 - Catálogo com iPhone 16 Pro Max, MacBook Pro, iPad Pro e Apple Watch Ultra 2. A vitrine do iPhone 18 Pro usa duas imagens oficiais para simular a rotação entre as vistas.
 - Seção de entrega, diferenciais com ícones do layout original, avaliação fornecida na referência e bloco de contato.
 - Paleta neutra, detalhes dourados e imagens locais otimizadas em WebP. As fotos oficiais da linha iPhone 18 Pro são da Apple.
@@ -27,7 +27,7 @@ Site institucional responsivo baseado no layout e na identidade visual da Zyvo W
 - Link para pular ao conteúdo, foco visível e navegação por teclado.
 - Controles no rodapé para ajustar o tamanho do texto de 90% a 130%, alternar alto contraste e pausar os efeitos decorativos.
 - Respeito à preferência de movimento reduzido do dispositivo.
-- Páginas de privacidade, cookies e acessibilidade. O player externo só é solicitado ao clicar em play.
+- Páginas de privacidade, cookies e acessibilidade. O player externo é solicitado ao chegar à área do vídeo ou ao clicar em play.
 
 ## Implementação e execução
 

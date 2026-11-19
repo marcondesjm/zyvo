@@ -79,17 +79,35 @@ if (phoneToggle) {
 }
 
 const videoPlay = document.querySelector(".video-play");
-if (videoPlay && location.protocol !== "file:") {
-  videoPlay.addEventListener("click", (event) => {
-    if (matchMedia("(pointer: coarse), (max-width: 700px)").matches || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
+if (videoPlay && /^https?:$/.test(location.protocol)) {
+  const screen = videoPlay.parentElement;
+  let observer;
+
+  function loadVideo({ muted, focus }) {
+    observer?.disconnect();
     const player = document.createElement("iframe");
     player.title = "Apresentação oficial do iPhone 18 Pro";
-    player.src = "https://www.youtube-nocookie.com/embed/5yD7pcI6HmI?autoplay=1&playsinline=1";
+    player.src = "https://www.youtube-nocookie.com/embed/5yD7pcI6HmI?autoplay=1&playsinline=1&mute=" + Number(muted);
     player.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
     player.allowFullscreen = true;
     player.referrerPolicy = "strict-origin-when-cross-origin";
-    videoPlay.parentElement.replaceChildren(player);
-    player.focus();
+    screen.replaceChildren(player);
+    if (focus) player.focus();
+  }
+
+  videoPlay.addEventListener("click", (event) => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    loadVideo({ muted: false, focus: true });
   });
+
+  const reducedVideoMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  if ("IntersectionObserver" in window) {
+    observer = new IntersectionObserver(([entry]) => {
+      if (entry.intersectionRatio >= 0.5 && !reducedVideoMotion.matches) {
+        loadVideo({ muted: true, focus: false });
+      }
+    }, { threshold: 0.5 });
+    observer.observe(screen);
+  }
 }
