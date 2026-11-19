@@ -49,4 +49,9 @@ A geração copia os arquivos públicos listados em scripts/build.mjs para dist/
 - Após definir o domínio oficial, completar canonical, sitemap e imagem de compartilhamento.
 - Confirmar canal de atendimento, estoque, preços, condições comerciais e autorização de uso do depoimento. O catálogo é institucional e o contato ainda não tem envio de mensagens ou checkout.
 
-Referência de implementação: [site da Eliana Scarpini](https://github.com/marcondesjm/eliana-scarpini).
+## Desenvolvimento
+
+**MJM Digital**
+
+- Instagram [@marcondes.machado.oficial](https://www.instagram.com/marcondes.machado.oficial/)
+- WhatsApp [(48) 9602-9392](https://wa.me/554896029392)
