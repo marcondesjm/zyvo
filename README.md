@@ -1,11 +1,52 @@
 # Zyvo Wireless
 
-Site institucional responsivo baseado na prévia e na identidade visual da Zyvo. Inclui vitrine, catálogo, diferenciais, contato institucional e páginas de privacidade, cookies e acessibilidade.
+Site institucional responsivo baseado no layout e na identidade visual da Zyvo Wireless. Apresenta a marca, o catálogo Apple e a operação de entrega internacional a partir de Davenport, na Flórida.
 
-A abertura tem bolhas contínuas com controle de pausa. As seções entram durante a rolagem, e a foto da entrega acompanha a direção da rolagem. O menu móvel funciona com teclado e fecha com Escape. O rodapé oferece ajuste de fonte e alto contraste. Os efeitos respeitam a preferência por movimento reduzido.
+[Acessar o site publicado na Vercel](https://zyvo-sigma.vercel.app/)
 
-Abra index.html para visualizar localmente. Execute npm run build para preparar dist/ com os arquivos públicos. A configuração da Vercel aponta para essa pasta.
+## Conteúdo e identidade visual
 
-Antes de publicar, confirmar canais oficiais, estoque e condições comerciais. O site não recebe mensagens nem realiza vendas. Revisar os avisos com a hospedagem definida e adicionar canonical, sitemap e imagem social após confirmar o domínio.
+- Abertura com fundo de vidro, logo oficial em SVG, apresentação e chamada para o catálogo.
+- Seção Sobre Nós com o texto da referência e vídeo oficial do iPhone 18 Pro. A capa permanece visível até o play, que carrega o YouTube em modo de privacidade reforçada. Há um link direto de alternativa.
+- Catálogo com iPhone 16 Pro Max, MacBook Pro, iPad Pro e Apple Watch Ultra 2. A vitrine do iPhone 18 Pro usa duas imagens oficiais para simular a rotação entre as vistas.
+- Seção de entrega, diferenciais com ícones do layout original, avaliação fornecida na referência e bloco de contato.
+- Paleta neutra, detalhes dourados e imagens locais otimizadas em WebP. As fotos oficiais da linha iPhone 18 Pro são da Apple.
 
-Foto do iPhone 18: Apple Newsroom, anúncio oficial da linha Pro.
+## Movimento e interação
+
+- Abertura com título em sequência e bolhas contínuas. O título entra como um bloco no celular para preservar a quebra de linhas.
+- Revelação das seções, do texto e dos cartões ao rolar, com entradas escalonadas.
+- Foto da entrega avança para a direita ao descer e retorna à esquerda ao subir. O cartão da entrega permanece separado do movimento da foto.
+- Círculo que acompanha o mouse em computadores, com destaque em links e botões.
+- Contorno dourado sob interação no logo, nos botões e nos ícones. No bloco de contato, o brilho percorre a borda continuamente.
+- Indicador de progresso da página e atalho para voltar ao topo em telas pequenas.
+
+## Navegação e acessibilidade
+
+- Menu móvel que fecha ao escolher uma seção ou pressionar Escape. Sem JavaScript, os links continuam disponíveis.
+- Link para pular ao conteúdo, foco visível e navegação por teclado.
+- Controles no rodapé para ajustar o tamanho do texto de 90% a 130%, alternar alto contraste e pausar os efeitos decorativos.
+- Respeito à preferência de movimento reduzido do dispositivo.
+- Páginas de privacidade, cookies e acessibilidade. O player externo só é solicitado ao clicar em play.
+
+## Implementação e execução
+
+O site usa HTML, CSS e JavaScript sem dependências de execução. O arquivo styles.css define a identidade e as transições. motion.js cuida da rolagem e do cursor. site.js controla o menu, as preferências, a vitrine e o vídeo.
+
+Para rodar localmente com o player incorporado:
+
+    python -m http.server 4197 --bind 127.0.0.1
+
+Acesse http://127.0.0.1:4197/. Para preparar os arquivos públicos:
+
+    npm run build
+
+A geração copia os arquivos públicos listados em scripts/build.mjs para dist/. A configuração da Vercel usa essa pasta e o projeto está vinculado à branch main deste repositório.
+
+## SEO e pendências
+
+- Título, descrição, metadados sociais, favicon e robots.txt configurados.
+- Após definir o domínio oficial, completar canonical, sitemap e imagem de compartilhamento.
+- Confirmar canal de atendimento, estoque, preços, condições comerciais e autorização de uso do depoimento. O catálogo é institucional e o contato ainda não tem envio de mensagens ou checkout.
+
+Referência de implementação: [site da Eliana Scarpini](https://github.com/marcondesjm/eliana-scarpini).

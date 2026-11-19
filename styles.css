@@ -348,11 +348,15 @@ button:focus-visible { outline: 3px solid #365d99; outline-offset: 4px; }
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   pointer-events: none;
+  opacity: 0;
+}
+:is(.pill, button, .brand-glint):focus-visible::after { opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+  :is(.pill, button, .brand-glint, .benefit-glint):hover::after { opacity: 1; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  :is(.pill, button, .brand-glint, .benefit-glint)::after { animation: contact-glint 4s linear infinite; }
+  :is(.pill, button, .brand-glint, .benefit-glint)::after { transition: opacity .2s ease; }
 }
-.pause-bubbles :is(.pill, button, .brand-glint, .benefit-glint)::after { animation-play-state: paused; }
 
 .brand-glint { padding: .55rem .8rem; border-radius: 99px; }
 
