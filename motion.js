@@ -20,7 +20,7 @@ if (!motionPreference.matches && "IntersectionObserver" in window) {
       if (!entry.isIntersecting) return;
       aboutObserver.disconnect();
       about.classList.add("enter-section");
-    }, { rootMargin: "0px 0px -18% 0px", threshold: 0.5 });
+    }, { rootMargin: "0px 0px -" + Math.round(innerHeight * 0.34) + "px 0px", threshold: 0.5 });
     aboutObserver.observe(aboutTitle);
   }
 }
